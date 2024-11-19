@@ -1,0 +1,38 @@
+{{> header}}
+<body>
+{{> navigation}}
+
+    <!-- main-header -->
+
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+
+                <!-- left-side-div -->
+                <div class="row">
+                    <div class="col-md-12 col-12 main_header_left align-items-center">
+                        <figure class="errimg">
+                            <img class="img-fluid align-items-center" src="images/error.jpg" alt="tonmoy"  >
+                        </figure>
+                    
+                        <p>Visit To TWeather Application</p>
+                        <p>{{errormsg}}</p>
+                        <a href="/"><button class="btn btn-danger btn-sm">Go Back</button></a>
+                    </div>
+                </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer part -->
+{{> footer}}
+
+    <!-- Bootstrap JS (Bundle includes Popper.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{{> header}}
+<body>
+  {{> navigation}}
+    <!-- main-header -->
+
+    <div class="container-fluid main_header">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+
+                <div class="row">
+                    <div class="main_content">
+                        <form action="" class="temp_form">
+                            <input type="text" id="cityName" placeholder="Enter Your City Name" autocomplete="off">
+                            <input type="submit" value="Search" id="submitBtn">
+                        </form>
+                    </div>
+
+                    <div class="tempInformation">
+                        <div class="top_layer">
+                            <p id="day">Friday</p>
+                            <p id="today_date">15 Nov</p>
+                        </div>
+                        <div class="main_layer">
+                            <p id="city_name">Get Output Here</p>
+                            <div class="middle_layer data_hide">
+                                <p id="temp"><span>0</span><sup>0</sup>C</p>
+                                <p id="temp_status"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer part -->
+
+   {{>footer}}
+
+
+    <script src="js/main.js"></script>
+    <script>
+            
+
+
+            const dayElement = document.getElementById("day");
+                    const dateElement = document.getElementById("today_date"); // Target the date element
+
+                    const getCurrentDayAndDate = () => {
+                        // Define weekdays
+                        let weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                        
+                        // Get current date and time
+                        let currentTime = new Date();
+                        
+                        // Get the current day and date components
+                        let days = weekDay[currentTime.getDay()]; // Get day of the week
+                        let date = currentTime.getDate(); // Get date (day of the month)
+                        let month = currentTime.toLocaleString('default', { month: 'short' }); // Get abbreviated month name
+                        let year = currentTime.getFullYear(); // Get year
+                        
+                        // Update elements
+                        dayElement.innerText = days;
+                        dateElement.innerText = `${date} ${month}, ${year}`; // Format: "15 Nov, 2024"
+                    };
+
+                    // Call the function to display the current day and date
+                    getCurrentDayAndDate();
+
+
+    </script>
+</body>
+</html>
